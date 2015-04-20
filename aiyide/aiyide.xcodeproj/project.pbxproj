@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A74B1AE4CA290052E9E3 /* HomeViewController.m */; };
+		E784A74E1AE4CA290052E9E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */; };
+		E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */; };
+		E784A7531AE4CAC20052E9E3 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */; };
+		E784A7571AE4CAD10052E9E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A7551AE4CAD10052E9E3 /* LoginViewController.m */; };
+		E784A7581AE4CAD10052E9E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */; };
+		E784A75C1AE4CB120052E9E3 /* ScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */; };
+		E784A75D1AE4CB120052E9E3 /* ScanCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */; };
 		E7B70CD41AE4891500FF4B0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CD31AE4891500FF4B0B /* main.m */; };
 		E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CD61AE4891500FF4B0B /* AppDelegate.m */; };
 		E7B70CDA1AE4891500FF4B0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CD91AE4891500FF4B0B /* ViewController.m */; };
@@ -27,6 +35,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E784A74A1AE4CA290052E9E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E784A74B1AE4CA290052E9E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E784A74F1AE4CAC20052E9E3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		E784A7541AE4CAD10052E9E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E784A7551AE4CAD10052E9E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E784A7591AE4CB120052E9E3 /* ScanCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCodeViewController.h; sourceTree = "<group>"; };
+		E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCodeViewController.m; sourceTree = "<group>"; };
+		E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanCodeViewController.xib; sourceTree = "<group>"; };
 		E7B70CCE1AE4891500FF4B0B /* aiyide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aiyide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B70CD21AE4891500FF4B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B70CD31AE4891500FF4B0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +80,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E784A7461AE4C9E00052E9E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E784A7491AE4CA0D0052E9E3 /* views */,
+				E784A7481AE4C9FB0052E9E3 /* model */,
+				E784A7471AE4C9F20052E9E3 /* controllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E784A7471AE4C9F20052E9E3 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E784A74A1AE4CA290052E9E3 /* HomeViewController.h */,
+				E784A74B1AE4CA290052E9E3 /* HomeViewController.m */,
+				E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */,
+				E784A74F1AE4CAC20052E9E3 /* RegisterViewController.h */,
+				E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */,
+				E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */,
+				E784A7541AE4CAD10052E9E3 /* LoginViewController.h */,
+				E784A7551AE4CAD10052E9E3 /* LoginViewController.m */,
+				E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */,
+				E784A7591AE4CB120052E9E3 /* ScanCodeViewController.h */,
+				E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */,
+				E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		E784A7481AE4C9FB0052E9E3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E784A7491AE4CA0D0052E9E3 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		E7B70CC51AE4891500FF4B0B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +144,7 @@
 		E7B70CD01AE4891500FF4B0B /* aiyide */ = {
 			isa = PBXGroup;
 			children = (
+				E784A7461AE4C9E00052E9E3 /* Classes */,
 				E7B70CD51AE4891500FF4B0B /* AppDelegate.h */,
 				E7B70CD61AE4891500FF4B0B /* AppDelegate.m */,
 				E7B70CD81AE4891500FF4B0B /* ViewController.h */,
@@ -200,8 +264,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B70CDD1AE4891500FF4B0B /* Main.storyboard in Resources */,
+				E784A7531AE4CAC20052E9E3 /* RegisterViewController.xib in Resources */,
+				E784A7581AE4CAD10052E9E3 /* LoginViewController.xib in Resources */,
 				E7B70CE21AE4891500FF4B0B /* LaunchScreen.xib in Resources */,
+				E784A75D1AE4CB120052E9E3 /* ScanCodeViewController.xib in Resources */,
 				E7B70CDF1AE4891500FF4B0B /* Images.xcassets in Resources */,
+				E784A74E1AE4CA290052E9E3 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */,
 				E7B70CDA1AE4891500FF4B0B /* ViewController.m in Sources */,
+				E784A7571AE4CAD10052E9E3 /* LoginViewController.m in Sources */,
 				E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */,
 				E7B70CD41AE4891500FF4B0B /* main.m in Sources */,
+				E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */,
+				E784A75C1AE4CB120052E9E3 /* ScanCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = aiyide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = aiyide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +486,7 @@
 				E7B70CF31AE4891600FF4B0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7B70CF41AE4891600FF4B0B /* Build configuration list for PBXNativeTarget "aiyideTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +495,7 @@
 				E7B70CF61AE4891600FF4B0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

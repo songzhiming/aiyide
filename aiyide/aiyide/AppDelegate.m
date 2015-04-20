@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 
 
@@ -19,8 +20,47 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    HomeViewController *homeViewController  = [[HomeViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeViewController];
+    nav.navigationBar.hidden = YES;
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+- (void)testRegister{
+//    NSString * soapMessage = [NSString stringWithFormat:@"<?xml version=/"1.0/" encoding=/"utf-8/"?>/n"
+//                              "<soap:Envelope xmlns:xsi=/"http://www.w3.org/2001/XMLSchema-instance/" xmlns:xsd=/"http://www.w3.org/2001/XMLSchema/" xmlns:soap=/"http://schemas.xmlsoap.org/soap/envelope//">/n"
+//                              "<soap:Body>/n"
+//                              "<Test xmlns=/"http://jinlong.ctc.com/">/n"
+//                              "<userID>%@</userID>/n"
+//                              "</Test>/n"
+//                              "</soap:Body>/n"
+//                              "</soap:Envelope>/n",@"JINLONG"
+//                              ];
+//    NSString * msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[soapMessage length]];
+//    //设置请求地址
+//    NSURL * url = [NSURL URLWithString:@"http://www.ieget.cn/WebService.asmx?op=insertRegisterIos"];
+//    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+//    //加请求头文件
+//    [urlRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+//    [urlRequest addValue: @"http://service.xiva.com/login" forHTTPHeaderField:@"SOAPAction"];
+//    [urlRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+//    //设置请求方式
+//    [urlRequest setHTTPMethod:@"POST"];
+//    [urlRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+//    NSURLResponse *reponse;
+//    NSError * error = nil;
+//    //接受返回数据
+//    NSData  * responseData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&reponse error:&error];
+//    NSMutableString * 
+//    result = [[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+//    NSLog(@"Return String is========>%@",result);  
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
