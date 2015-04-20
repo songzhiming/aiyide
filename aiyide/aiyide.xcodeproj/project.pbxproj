@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B74C1B51AE50F160097E0B4 /* AydRootButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74C1B41AE50F150097E0B4 /* AydRootButton.m */; };
+		3B74C1B81AE53C180097E0B4 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74C1B71AE53C180097E0B4 /* Tool.m */; };
 		E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A74B1AE4CA290052E9E3 /* HomeViewController.m */; };
 		E784A74E1AE4CA290052E9E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */; };
 		E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B74C1B31AE50F150097E0B4 /* AydRootButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AydRootButton.h; sourceTree = "<group>"; };
+		3B74C1B41AE50F150097E0B4 /* AydRootButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AydRootButton.m; sourceTree = "<group>"; };
+		3B74C1B61AE53C180097E0B4 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		3B74C1B71AE53C180097E0B4 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		E784A74A1AE4CA290052E9E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		E784A74B1AE4CA290052E9E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		E784A7481AE4C9FB0052E9E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3B74C1B61AE53C180097E0B4 /* Tool.h */,
+				3B74C1B71AE53C180097E0B4 /* Tool.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 		E784A7491AE4CA0D0052E9E3 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3B74C1B31AE50F150097E0B4 /* AydRootButton.h */,
+				3B74C1B41AE50F150097E0B4 /* AydRootButton.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -287,12 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B74C1B51AE50F160097E0B4 /* AydRootButton.m in Sources */,
 				E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */,
 				E7B70CDA1AE4891500FF4B0B /* ViewController.m in Sources */,
 				E784A7571AE4CAD10052E9E3 /* LoginViewController.m in Sources */,
 				E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */,
 				E7B70CD41AE4891500FF4B0B /* main.m in Sources */,
 				E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */,
+				3B74C1B81AE53C180097E0B4 /* Tool.m in Sources */,
 				E784A75C1AE4CB120052E9E3 /* ScanCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

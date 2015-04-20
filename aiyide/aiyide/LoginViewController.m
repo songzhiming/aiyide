@@ -8,8 +8,11 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-
-@interface LoginViewController ()
+#import "HomeViewController.h"
+#import "Tool.h"
+@interface LoginViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -18,6 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // 设置uitextfield
+    self.phoneField.leftView        = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 5, 0)];
+    self.passwordField.leftView     = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 5, 0)];
+    self.phoneField.leftViewMode    = UITextFieldViewModeAlways;
+    self.passwordField.leftViewMode = UITextFieldViewModeAlways;
+    self.phoneField.delegate        = self;
+    self.passwordField.delegate     = self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (self.phoneField == textField) {
+        [self.passwordField becomeFirstResponder];
+    }else{
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (IBAction)ClickLoginButton:(UIButton *)sender {
+    if (self.phoneField.text.length > 0 && self.passwordField.text.length > 0) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        NSLog(@"手机号或者密码不能为空");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,15 +56,16 @@
     RegisterViewController *registerVc = [[RegisterViewController alloc]init];
     [self.navigationController pushViewController:registerVc animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)clickBackButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+- (IBAction)clickLogin:(UIButton *)sender {
+    
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
 
 @end

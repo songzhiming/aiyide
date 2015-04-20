@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -59,9 +59,10 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-u0-580">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-u0-580" customClass="AydRootButton">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <state key="normal" title="扫码">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -199,13 +200,16 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-Oy-7NP">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-Oy-7NP" customClass="AydRootButton">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="66" id="JJQ-xa-Q5B"/>
+                        <constraint firstAttribute="height" constant="66" id="JJQ-xa-Q5B">
+                            <variation key="heightClass=regular-widthClass=compact" constant="36"/>
+                        </constraint>
                         <constraint firstAttribute="width" constant="288" id="vlH-6L-KlN"/>
                     </constraints>
                     <state key="normal" title="登陆">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -267,14 +271,16 @@
                     <exclude reference="wcx-Oy-7NP"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="bRf-T2-I7k"/>
-                    <exclude reference="gE2-Tr-8t8"/>
-                    <exclude reference="k2s-SS-6t7"/>
-                    <exclude reference="q2r-7a-rpr"/>
+                    <exclude reference="CjP-6N-vbl"/>
+                    <exclude reference="McW-aj-l7r"/>
                     <exclude reference="7gy-Su-MjA"/>
                     <exclude reference="g5B-uJ-ksl"/>
                     <exclude reference="giR-Yr-wbn"/>
                     <exclude reference="nO9-Tq-QSd"/>
+                    <exclude reference="bRf-T2-I7k"/>
+                    <exclude reference="gE2-Tr-8t8"/>
+                    <exclude reference="ZMV-pB-lmh"/>
+                    <exclude reference="4AM-dd-8xL"/>
                     <exclude reference="5hK-RX-VgU"/>
                     <exclude reference="64q-Xy-WPP"/>
                     <exclude reference="AIk-RJ-nnN"/>
@@ -286,12 +292,10 @@
                     <exclude reference="zFQ-jI-AaH"/>
                     <exclude reference="VG7-Tn-yPl"/>
                     <exclude reference="eja-cQ-Jtj"/>
-                    <exclude reference="4AM-dd-8xL"/>
+                    <exclude reference="k2s-SS-6t7"/>
+                    <exclude reference="q2r-7a-rpr"/>
                     <exclude reference="ck5-HC-SFM"/>
                     <exclude reference="gMg-R4-cBB"/>
-                    <exclude reference="ZMV-pB-lmh"/>
-                    <exclude reference="CjP-6N-vbl"/>
-                    <exclude reference="McW-aj-l7r"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -308,14 +312,16 @@
                     <include reference="wcx-Oy-7NP"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="bRf-T2-I7k"/>
-                    <include reference="gE2-Tr-8t8"/>
-                    <exclude reference="k2s-SS-6t7"/>
-                    <include reference="q2r-7a-rpr"/>
+                    <include reference="CjP-6N-vbl"/>
+                    <include reference="McW-aj-l7r"/>
                     <include reference="7gy-Su-MjA"/>
                     <include reference="g5B-uJ-ksl"/>
                     <exclude reference="giR-Yr-wbn"/>
                     <include reference="nO9-Tq-QSd"/>
+                    <include reference="bRf-T2-I7k"/>
+                    <include reference="gE2-Tr-8t8"/>
+                    <include reference="ZMV-pB-lmh"/>
+                    <include reference="4AM-dd-8xL"/>
                     <include reference="5hK-RX-VgU"/>
                     <exclude reference="64q-Xy-WPP"/>
                     <include reference="AIk-RJ-nnN"/>
@@ -327,12 +333,10 @@
                     <include reference="zFQ-jI-AaH"/>
                     <include reference="VG7-Tn-yPl"/>
                     <include reference="eja-cQ-Jtj"/>
-                    <include reference="4AM-dd-8xL"/>
+                    <exclude reference="k2s-SS-6t7"/>
+                    <include reference="q2r-7a-rpr"/>
                     <include reference="ck5-HC-SFM"/>
                     <include reference="gMg-R4-cBB"/>
-                    <include reference="ZMV-pB-lmh"/>
-                    <include reference="CjP-6N-vbl"/>
-                    <include reference="McW-aj-l7r"/>
                 </mask>
             </variation>
         </view>

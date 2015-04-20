@@ -28,7 +28,10 @@
 //到登陆页面
 - (IBAction)loginAction:(id)sender {
     LoginViewController *loginViewController  = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:loginViewController animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    nav.navigationBarHidden     = YES;
+    [self presentViewController:nav animated:YES completion:nil];
+//    [self.navigationController pushViewController:loginViewController animated:YES];
     
 }
 //到扫码页面
