@@ -48,6 +48,7 @@
 		E7B70CDF1AE4891500FF4B0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B70CDE1AE4891500FF4B0B /* Images.xcassets */; };
 		E7B70CE21AE4891500FF4B0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B70CE01AE4891500FF4B0B /* LaunchScreen.xib */; };
 		E7B70CEE1AE4891600FF4B0B /* aiyideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CED1AE4891600FF4B0B /* aiyideTests.m */; };
+		E7EA5FDB1AE6915500B9BDB7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EA5FDA1AE6915500B9BDB7 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,8 @@
 		E7B70CE71AE4891600FF4B0B /* aiyideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aiyideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B70CEC1AE4891600FF4B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B70CED1AE4891600FF4B0B /* aiyideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aiyideTests.m; sourceTree = "<group>"; };
+		E7EA5FD91AE6915500B9BDB7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E7EA5FDA1AE6915500B9BDB7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		FE73537B5798876856E43A4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +222,8 @@
 		E744DADB1AE5F2E600D6AAE9 /* webservice */ = {
 			isa = PBXGroup;
 			children = (
+				E7EA5FD91AE6915500B9BDB7 /* MBProgressHUD.h */,
+				E7EA5FDA1AE6915500B9BDB7 /* MBProgressHUD.m */,
 				E744DAEC1AE5F3C700D6AAE9 /* service */,
 				E744DAE91AE5F3C200D6AAE9 /* AppHelper.h */,
 				E744DAEA1AE5F3C200D6AAE9 /* AppHelper.m */,
@@ -569,6 +574,7 @@
 				3B9FE2701AE6160D008DCB1F /* split.c in Sources */,
 				E744DB021AE5F43300D6AAE9 /* ASIAuthenticationDialog.m in Sources */,
 				E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */,
+				E7EA5FDB1AE6915500B9BDB7 /* MBProgressHUD.m in Sources */,
 				E744DB051AE5F43300D6AAE9 /* ASIHTTPRequest.m in Sources */,
 				E7B70CD41AE4891500FF4B0B /* main.m in Sources */,
 				3B9FE2691AE6160D008DCB1F /* bitstream.c in Sources */,

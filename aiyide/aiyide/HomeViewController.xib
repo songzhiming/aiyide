@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -73,15 +73,18 @@
                         <action selector="scanCodeAction:" destination="-1" eventType="touchUpInside" id="JpP-3h-BsB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-vf-7jd">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-vf-7jd">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="DBt-Md-TEy"/>
+                        <constraint firstAttribute="width" constant="46" id="DBt-Md-TEy">
+                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                        </constraint>
                         <constraint firstAttribute="height" constant="30" id="oZd-UC-X6f"/>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <state key="normal" image="code_Normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" image="code_Selected"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="DBt-Md-TEy"/>
@@ -98,11 +101,13 @@
                         <action selector="changeClick:" destination="-1" eventType="touchUpInside" id="MLz-Kc-pzZ"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S5-sL-rhf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号条码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S5-sL-rhf">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="ILF-kJ-ExE"/>
-                        <constraint firstAttribute="width" constant="42" id="kkT-a6-lsF"/>
+                        <constraint firstAttribute="width" constant="42" id="kkT-a6-lsF">
+                            <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -120,15 +125,20 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m4-xi-mVk">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m4-xi-mVk">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Yza-Ro-a8o"/>
-                        <constraint firstAttribute="width" constant="46" id="qyp-ZO-22U"/>
+                        <constraint firstAttribute="height" constant="30" id="Yza-Ro-a8o">
+                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="46" id="qyp-ZO-22U">
+                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                        </constraint>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <state key="normal" image="code_Selected">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" image="code_Normal"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="Yza-Ro-a8o"/>
@@ -142,11 +152,13 @@
                         </mask>
                     </variation>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTl-3s-g8S">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫码条码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTl-3s-g8S">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="3lv-t1-W2P"/>
-                        <constraint firstAttribute="width" constant="42" id="UXN-I8-oiI"/>
+                        <constraint firstAttribute="width" constant="42" id="UXN-I8-oiI">
+                            <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -276,7 +288,9 @@
                 <constraint firstItem="SWI-u0-580" firstAttribute="top" secondItem="wcx-Oy-7NP" secondAttribute="bottom" constant="20" id="OzD-Fh-oLV"/>
                 <constraint firstItem="SWI-u0-580" firstAttribute="width" secondItem="wcx-Oy-7NP" secondAttribute="width" id="PBM-K8-p3c"/>
                 <constraint firstItem="hYW-j6-l23" firstAttribute="top" secondItem="Sci-vf-7jd" secondAttribute="bottom" constant="23" id="UVx-Tv-tdm"/>
-                <constraint firstItem="Sci-vf-7jd" firstAttribute="leading" secondItem="0S5-sL-rhf" secondAttribute="leading" constant="-54" id="VG7-Tn-yPl"/>
+                <constraint firstItem="Sci-vf-7jd" firstAttribute="leading" secondItem="0S5-sL-rhf" secondAttribute="leading" constant="-54" id="VG7-Tn-yPl">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-30"/>
+                </constraint>
                 <constraint firstItem="oTl-3s-g8S" firstAttribute="centerY" secondItem="5m4-xi-mVk" secondAttribute="centerY" id="Wvs-vh-2iI"/>
                 <constraint firstAttribute="trailing" secondItem="oTl-3s-g8S" secondAttribute="trailing" constant="51" id="ZMV-pB-lmh"/>
                 <constraint firstItem="Sci-vf-7jd" firstAttribute="centerY" secondItem="5m4-xi-mVk" secondAttribute="centerY" constant="36" id="ZmQ-Fj-6k7">
@@ -286,7 +300,9 @@
                     <variation key="heightClass=regular-widthClass=compact" constant="44"/>
                 </constraint>
                 <constraint firstItem="0S5-sL-rhf" firstAttribute="centerY" secondItem="Sci-vf-7jd" secondAttribute="centerY" id="dTn-PD-4XO"/>
-                <constraint firstItem="Sci-vf-7jd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="eja-cQ-Jtj"/>
+                <constraint firstItem="Sci-vf-7jd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="eja-cQ-Jtj">
+                    <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                </constraint>
                 <constraint firstItem="KE6-Sa-qfH" firstAttribute="bottom" secondItem="wcx-Oy-7NP" secondAttribute="top" constant="-20" id="g5B-uJ-ksl"/>
                 <constraint firstItem="kOz-GB-iyO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="gE2-Tr-8t8"/>
                 <constraint firstAttribute="centerX" secondItem="wcx-Oy-7NP" secondAttribute="centerX" constant="8" id="q2r-7a-rpr"/>
@@ -373,4 +389,8 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="code_Normal" width="18" height="18"/>
+        <image name="code_Selected" width="18" height="18"/>
+    </resources>
 </document>

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServiceHelper.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<ServiceHelperDelegate>
 
 @end

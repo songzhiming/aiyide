@@ -95,6 +95,9 @@
                                     <include reference="u31-ec-PCh"/>
                                 </mask>
                             </variation>
+                            <connections>
+                                <action selector="onclickBack:" destination="-1" eventType="touchUpInside" id="eaW-hO-Xdi"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,25 +148,25 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="kfu-2m-F8w"/>
-                            <exclude reference="FHh-oX-qFi"/>
-                            <exclude reference="nOO-3p-mlU"/>
-                            <exclude reference="EPY-0w-nVh"/>
-                            <exclude reference="sJ9-jz-Gjj"/>
-                            <exclude reference="O0b-Op-HfC"/>
-                            <exclude reference="huM-wH-knP"/>
-                            <exclude reference="0i8-at-heB"/>
-                            <exclude reference="UZ9-eb-x0X"/>
-                            <exclude reference="IWw-DO-2eb"/>
-                            <exclude reference="L78-S9-OKP"/>
-                            <exclude reference="ePj-Lb-pYi"/>
-                            <exclude reference="B7p-e8-rIL"/>
-                            <exclude reference="DDF-4n-OST"/>
-                            <exclude reference="SpT-Uq-Hxx"/>
                             <exclude reference="HpE-DE-1Yp"/>
                             <exclude reference="SDH-WP-MKK"/>
                             <exclude reference="jiC-n1-x4V"/>
                             <exclude reference="uuL-jS-xf7"/>
                             <exclude reference="wom-gn-NWi"/>
+                            <exclude reference="0i8-at-heB"/>
+                            <exclude reference="UZ9-eb-x0X"/>
+                            <exclude reference="IWw-DO-2eb"/>
+                            <exclude reference="L78-S9-OKP"/>
+                            <exclude reference="ePj-Lb-pYi"/>
+                            <exclude reference="O0b-Op-HfC"/>
+                            <exclude reference="huM-wH-knP"/>
+                            <exclude reference="B7p-e8-rIL"/>
+                            <exclude reference="DDF-4n-OST"/>
+                            <exclude reference="SpT-Uq-Hxx"/>
+                            <exclude reference="EPY-0w-nVh"/>
+                            <exclude reference="sJ9-jz-Gjj"/>
+                            <exclude reference="FHh-oX-qFi"/>
+                            <exclude reference="nOO-3p-mlU"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -179,25 +182,25 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="kfu-2m-F8w"/>
-                            <include reference="FHh-oX-qFi"/>
-                            <include reference="nOO-3p-mlU"/>
-                            <include reference="EPY-0w-nVh"/>
-                            <include reference="sJ9-jz-Gjj"/>
-                            <include reference="O0b-Op-HfC"/>
-                            <include reference="huM-wH-knP"/>
-                            <include reference="0i8-at-heB"/>
-                            <include reference="UZ9-eb-x0X"/>
-                            <include reference="IWw-DO-2eb"/>
-                            <include reference="L78-S9-OKP"/>
-                            <include reference="ePj-Lb-pYi"/>
-                            <include reference="B7p-e8-rIL"/>
-                            <include reference="DDF-4n-OST"/>
-                            <include reference="SpT-Uq-Hxx"/>
                             <include reference="HpE-DE-1Yp"/>
                             <include reference="SDH-WP-MKK"/>
                             <include reference="jiC-n1-x4V"/>
                             <include reference="uuL-jS-xf7"/>
                             <include reference="wom-gn-NWi"/>
+                            <include reference="0i8-at-heB"/>
+                            <include reference="UZ9-eb-x0X"/>
+                            <include reference="IWw-DO-2eb"/>
+                            <include reference="L78-S9-OKP"/>
+                            <include reference="ePj-Lb-pYi"/>
+                            <include reference="O0b-Op-HfC"/>
+                            <include reference="huM-wH-knP"/>
+                            <include reference="B7p-e8-rIL"/>
+                            <include reference="DDF-4n-OST"/>
+                            <include reference="SpT-Uq-Hxx"/>
+                            <include reference="EPY-0w-nVh"/>
+                            <include reference="sJ9-jz-Gjj"/>
+                            <include reference="FHh-oX-qFi"/>
+                            <include reference="nOO-3p-mlU"/>
                         </mask>
                     </variation>
                 </view>

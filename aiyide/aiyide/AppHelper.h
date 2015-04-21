@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface AppHelper : NSObject
-//+ (void)showHUD:(NSString *)msg;
-//+ (void)removeHUD;
++ (void)showHUD:(NSString *)msg;
++ (void)removeHUD;
 @end
