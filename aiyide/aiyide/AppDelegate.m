@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "SoapHelper.h"
+#import "ASIHTTPRequest.h"
+#import "SoapXmlParseHelper.h"
+#import "SoapHelper.h"
 
 
 @interface AppDelegate ()
@@ -24,39 +28,25 @@
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    [self testRegister];
     return YES;
 }
 
 
 - (void)testRegister{
-//    NSString * soapMessage = [NSString stringWithFormat:@"<?xml version=/"1.0/" encoding=/"utf-8/"?>/n"
-//                              "<soap:Envelope xmlns:xsi=/"http://www.w3.org/2001/XMLSchema-instance/" xmlns:xsd=/"http://www.w3.org/2001/XMLSchema/" xmlns:soap=/"http://schemas.xmlsoap.org/soap/envelope//">/n"
-//                              "<soap:Body>/n"
-//                              "<Test xmlns=/"http://jinlong.ctc.com/">/n"
-//                              "<userID>%@</userID>/n"
-//                              "</Test>/n"
-//                              "</soap:Body>/n"
-//                              "</soap:Envelope>/n",@"JINLONG"
-//                              ];
-//    NSString * msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[soapMessage length]];
-//    //设置请求地址
-//    NSURL * url = [NSURL URLWithString:@"http://www.ieget.cn/WebService.asmx?op=insertRegisterIos"];
-//    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
-//    //加请求头文件
-//    [urlRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-//    [urlRequest addValue: @"http://service.xiva.com/login" forHTTPHeaderField:@"SOAPAction"];
-//    [urlRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-//    //设置请求方式
-//    [urlRequest setHTTPMethod:@"POST"];
-//    [urlRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-//    NSURLResponse *reponse;
-//    NSError * error = nil;
-//    //接受返回数据
-//    NSData  * responseData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&reponse error:&error];
-//    NSMutableString * 
-//    result = [[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//    NSLog(@"Return String is========>%@",result);  
-
+    NSLog(@"=======同步请求开始======\n");
+    NSMutableArray *arr=[NSMutableArray array];
+    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"13285119044",@"PhoneNo", nil]];
+    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"123",@"Passwords", nil]];
+    NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"insertRegisterIos"];
+    //执行同步并取得结果
+    ServiceHelper *helper = [[ServiceHelper alloc] initWithDelegate:self];
+    NSString *xml=[helper syncServiceMethod:@"insertRegisterIos" soapMessage:soapMsg];
+    
+    //将xml使用SoapXmlParseHelper类转换成想要的结果
+    
+    NSLog(@"同步请求返回的xml:\n%@\n",xml);
+    NSLog(@"=======同步请求结束======\n");
 }
 
 
