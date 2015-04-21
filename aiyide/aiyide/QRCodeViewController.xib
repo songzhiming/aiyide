@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeViewController">
+            <connections>
+                <outlet property="SCannerRangeImageView" destination="xfV-ml-DeJ" id="MmL-eo-XHV"/>
+                <outlet property="imageHeightConstraint" destination="VUk-dq-g6a" id="7Ig-tP-x78"/>
+                <outlet property="infoLabel" destination="CjQ-cI-9mp" id="orh-xB-gLa"/>
+                <outlet property="inputButton" destination="wTE-y3-VFL" id="2iJ-9I-upL"/>
+                <outlet property="resultTextField" destination="69T-KH-xn8" id="RXX-yL-RMq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="OverlayView" destination="5vR-sZ-ehT" id="V3I-ir-kDa"/>
+                <outletCollection property="OverlayView" destination="R3r-Pz-20g" id="zVb-1z-7Cr"/>
+                <outletCollection property="OverlayView" destination="QOX-CC-gPR" id="mLd-wM-7sg"/>
+                <outletCollection property="OverlayView" destination="GdF-XE-kNJ" id="21S-Ub-ha3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="扫描网格.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ugm-0l-Kee">
+                    <rect key="frame" x="160" y="160" width="280" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="0bd-D3-DjQ"/>
+                        <constraint firstAttribute="height" constant="10" id="VUk-dq-g6a"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3r-Pz-20g">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTE-y3-VFL" customClass="AydRootButton">
+                            <rect key="frame" x="500" y="44" width="80" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="ow9-1U-goC"/>
+                            </constraints>
+                            <state key="normal" title="手动输入">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="clickInputButton:" destination="-1" eventType="touchUpInside" id="XNr-Cq-K4Z"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69T-KH-xn8">
+                            <rect key="frame" x="20" y="39" width="460" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="gfv-cG-Cty"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wTE-y3-VFL" firstAttribute="leading" secondItem="69T-KH-xn8" secondAttribute="trailing" constant="20" id="CiQ-mD-Zz9"/>
+                        <constraint firstItem="69T-KH-xn8" firstAttribute="leading" secondItem="R3r-Pz-20g" secondAttribute="leading" constant="20" id="EO4-hx-bA1"/>
+                        <constraint firstItem="69T-KH-xn8" firstAttribute="centerY" secondItem="wTE-y3-VFL" secondAttribute="centerY" id="LKr-hb-u6G"/>
+                        <constraint firstAttribute="trailing" secondItem="wTE-y3-VFL" secondAttribute="trailing" constant="20" id="kfI-OD-tsX"/>
+                        <constraint firstItem="wTE-y3-VFL" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="top" constant="44" id="qFS-t9-7a5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-sZ-ehT">
+                    <rect key="frame" x="0.0" y="162" width="160" height="438"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOX-CC-gPR">
+                    <rect key="frame" x="160" y="440" width="440" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-XE-kNJ">
+                    <rect key="frame" x="440" y="162" width="160" height="278"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="扫描框.png" translatesAutoresizingMaskIntoConstraints="NO" id="xfV-ml-DeJ">
+                    <rect key="frame" x="160" y="160" width="280" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="M14-PY-XsX"/>
+                        <constraint firstAttribute="height" constant="280" id="vGZ-ms-FW1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="请将二维码放入框中,离手机摄像头15CM左右，系统会自动识别" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjQ-cI-9mp">
+                    <rect key="frame" x="60" y="470" width="480" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="Ugm-0l-Kee" secondAttribute="centerX" id="02C-gq-5Md"/>
+                <constraint firstItem="QOX-CC-gPR" firstAttribute="leading" secondItem="5vR-sZ-ehT" secondAttribute="trailing" id="0Li-3G-Wbm"/>
+                <constraint firstItem="xfV-ml-DeJ" firstAttribute="top" secondItem="Ugm-0l-Kee" secondAttribute="bottom" constant="-20" id="98m-MH-pO6"/>
+                <constraint firstItem="5vR-sZ-ehT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9cZ-Tt-k5o"/>
+                <constraint firstItem="GdF-XE-kNJ" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="bottom" id="Ct8-nl-9Kr"/>
+                <constraint firstItem="R3r-Pz-20g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gb4-PH-zFB"/>
+                <constraint firstAttribute="trailing" secondItem="R3r-Pz-20g" secondAttribute="trailing" id="Hfj-Sh-Oeq"/>
+                <constraint firstAttribute="centerY" secondItem="xfV-ml-DeJ" secondAttribute="centerY" id="JAd-lc-9Cf"/>
+                <constraint firstItem="Ugm-0l-Kee" firstAttribute="top" secondItem="xfV-ml-DeJ" secondAttribute="top" id="MQR-UW-GwX"/>
+                <constraint firstItem="5vR-sZ-ehT" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="bottom" id="NOQ-vF-Bss"/>
+                <constraint firstItem="CjQ-cI-9mp" firstAttribute="top" secondItem="xfV-ml-DeJ" secondAttribute="bottom" constant="30" id="OiF-te-nFc"/>
+                <constraint firstAttribute="trailing" secondItem="CjQ-cI-9mp" secondAttribute="trailing" constant="60" id="Rog-9c-aYI"/>
+                <constraint firstAttribute="centerX" secondItem="CjQ-cI-9mp" secondAttribute="centerX" id="U11-Fh-v57"/>
+                <constraint firstItem="GdF-XE-kNJ" firstAttribute="leading" secondItem="Ugm-0l-Kee" secondAttribute="trailing" id="VyB-o4-eHw"/>
+                <constraint firstAttribute="trailing" secondItem="GdF-XE-kNJ" secondAttribute="trailing" id="WVy-Mv-zzc"/>
+                <constraint firstAttribute="trailing" secondItem="QOX-CC-gPR" secondAttribute="trailing" id="ag5-vu-e4o"/>
+                <constraint firstItem="CjQ-cI-9mp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="egI-Wq-7Pv"/>
+                <constraint firstAttribute="centerX" secondItem="xfV-ml-DeJ" secondAttribute="centerX" id="f0F-hV-7D3"/>
+                <constraint firstItem="R3r-Pz-20g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gFk-eg-wWZ"/>
+                <constraint firstAttribute="bottom" secondItem="QOX-CC-gPR" secondAttribute="bottom" id="gaE-wa-AZY"/>
+                <constraint firstItem="QOX-CC-gPR" firstAttribute="top" secondItem="GdF-XE-kNJ" secondAttribute="bottom" id="o1m-QW-1sN"/>
+                <constraint firstItem="xfV-ml-DeJ" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="bottom" constant="-2" id="oV5-mn-glJ"/>
+                <constraint firstAttribute="bottom" secondItem="5vR-sZ-ehT" secondAttribute="bottom" id="orJ-FQ-H9b"/>
+                <constraint firstItem="xfV-ml-DeJ" firstAttribute="leading" secondItem="5vR-sZ-ehT" secondAttribute="trailing" id="uY8-pX-Gd1"/>
+                <constraint firstItem="QOX-CC-gPR" firstAttribute="top" secondItem="xfV-ml-DeJ" secondAttribute="bottom" id="zuh-QV-QsM"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="98m-MH-pO6"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="扫描框.png" width="280" height="280"/>
+        <image name="扫描网格.png" width="280" height="280"/>
+    </resources>
+</document>

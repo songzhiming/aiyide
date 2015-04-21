@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		3B74C1B51AE50F160097E0B4 /* AydRootButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74C1B41AE50F150097E0B4 /* AydRootButton.m */; };
 		3B74C1B81AE53C180097E0B4 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74C1B71AE53C180097E0B4 /* Tool.m */; };
+		3B9FE2691AE6160D008DCB1F /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2591AE6160D008DCB1F /* bitstream.c */; };
+		3B9FE26A1AE6160D008DCB1F /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE25B1AE6160D008DCB1F /* mask.c */; };
+		3B9FE26B1AE6160D008DCB1F /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE25E1AE6160D008DCB1F /* QRCodeGenerator.m */; };
+		3B9FE26C1AE6160D008DCB1F /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE25F1AE6160D008DCB1F /* qrencode.c */; };
+		3B9FE26D1AE6160D008DCB1F /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2611AE6160D008DCB1F /* qrinput.c */; };
+		3B9FE26E1AE6160D008DCB1F /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2631AE6160D008DCB1F /* qrspec.c */; };
+		3B9FE26F1AE6160D008DCB1F /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2651AE6160D008DCB1F /* rscode.c */; };
+		3B9FE2701AE6160D008DCB1F /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2671AE6160D008DCB1F /* split.c */; };
+		3B9FE2741AE61647008DCB1F /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FE2721AE61647008DCB1F /* QRCodeViewController.m */; };
+		3B9FE2751AE61647008DCB1F /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9FE2731AE61647008DCB1F /* QRCodeViewController.xib */; };
+		3B9FE2771AE61695008DCB1F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9FE2761AE61695008DCB1F /* HomeViewController.xib */; };
 		93FBE36F7532D0FD4EC3A965 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C187D62C28895C6651765A /* libPods.a */; };
 		E744DADF1AE5F34B00D6AAE9 /* SoapHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E744DADE1AE5F34B00D6AAE9 /* SoapHelper.m */; };
 		E744DAE31AE5F39E00D6AAE9 /* SoapXmlParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E744DAE21AE5F39E00D6AAE9 /* SoapXmlParseHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -25,13 +36,10 @@
 		E744DB0E1AE5F47900D6AAE9 /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E744DB0D1AE5F47900D6AAE9 /* ServiceHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E744DB101AE5F6CB00D6AAE9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E744DB0F1AE5F6CB00D6AAE9 /* libz.dylib */; };
 		E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A74B1AE4CA290052E9E3 /* HomeViewController.m */; };
-		E784A74E1AE4CA290052E9E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */; };
 		E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */; };
 		E784A7531AE4CAC20052E9E3 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */; };
 		E784A7571AE4CAD10052E9E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A7551AE4CAD10052E9E3 /* LoginViewController.m */; };
 		E784A7581AE4CAD10052E9E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */; };
-		E784A75C1AE4CB120052E9E3 /* ScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */; };
-		E784A75D1AE4CB120052E9E3 /* ScanCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */; };
 		E784A75F1AE5E9270052E9E3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E784A75E1AE5E9270052E9E3 /* libxml2.dylib */; };
 		E7B70CD41AE4891500FF4B0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CD31AE4891500FF4B0B /* main.m */; };
 		E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B70CD61AE4891500FF4B0B /* AppDelegate.m */; };
@@ -57,6 +65,26 @@
 		3B74C1B41AE50F150097E0B4 /* AydRootButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AydRootButton.m; sourceTree = "<group>"; };
 		3B74C1B61AE53C180097E0B4 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		3B74C1B71AE53C180097E0B4 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		3B9FE2591AE6160D008DCB1F /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		3B9FE25A1AE6160D008DCB1F /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		3B9FE25B1AE6160D008DCB1F /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		3B9FE25C1AE6160D008DCB1F /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		3B9FE25D1AE6160D008DCB1F /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		3B9FE25E1AE6160D008DCB1F /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		3B9FE25F1AE6160D008DCB1F /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		3B9FE2601AE6160D008DCB1F /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		3B9FE2611AE6160D008DCB1F /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		3B9FE2621AE6160D008DCB1F /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		3B9FE2631AE6160D008DCB1F /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		3B9FE2641AE6160D008DCB1F /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		3B9FE2651AE6160D008DCB1F /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		3B9FE2661AE6160D008DCB1F /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		3B9FE2671AE6160D008DCB1F /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		3B9FE2681AE6160D008DCB1F /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		3B9FE2711AE61647008DCB1F /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		3B9FE2721AE61647008DCB1F /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		3B9FE2731AE61647008DCB1F /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
+		3B9FE2761AE61695008DCB1F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B8C187D62C28895C6651765A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF88B7F775B328F5CA58ECF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E744DADD1AE5F34B00D6AAE9 /* SoapHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapHelper.h; sourceTree = "<group>"; };
@@ -95,16 +123,12 @@
 		E744DB0F1AE5F6CB00D6AAE9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E784A74A1AE4CA290052E9E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		E784A74B1AE4CA290052E9E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E784A74F1AE4CAC20052E9E3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		E784A7541AE4CAD10052E9E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E784A7551AE4CAD10052E9E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		E784A7591AE4CB120052E9E3 /* ScanCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCodeViewController.h; sourceTree = "<group>"; };
-		E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCodeViewController.m; sourceTree = "<group>"; };
-		E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanCodeViewController.xib; sourceTree = "<group>"; };
 		E784A75E1AE5E9270052E9E3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		E7B70CCE1AE4891500FF4B0B /* aiyide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aiyide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B70CD21AE4891500FF4B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +174,36 @@
 				BDF88B7F775B328F5CA58ECF /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B9FE2551AE61547008DCB1F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		3B9FE2581AE615FD008DCB1F /* qrencode */ = {
+			isa = PBXGroup;
+			children = (
+				3B9FE2591AE6160D008DCB1F /* bitstream.c */,
+				3B9FE25A1AE6160D008DCB1F /* bitstream.h */,
+				3B9FE25B1AE6160D008DCB1F /* mask.c */,
+				3B9FE25C1AE6160D008DCB1F /* mask.h */,
+				3B9FE25D1AE6160D008DCB1F /* QRCodeGenerator.h */,
+				3B9FE25E1AE6160D008DCB1F /* QRCodeGenerator.m */,
+				3B9FE25F1AE6160D008DCB1F /* qrencode.c */,
+				3B9FE2601AE6160D008DCB1F /* qrencode.h */,
+				3B9FE2611AE6160D008DCB1F /* qrinput.c */,
+				3B9FE2621AE6160D008DCB1F /* qrinput.h */,
+				3B9FE2631AE6160D008DCB1F /* qrspec.c */,
+				3B9FE2641AE6160D008DCB1F /* qrspec.h */,
+				3B9FE2651AE6160D008DCB1F /* rscode.c */,
+				3B9FE2661AE6160D008DCB1F /* rscode.h */,
+				3B9FE2671AE6160D008DCB1F /* split.c */,
+				3B9FE2681AE6160D008DCB1F /* split.h */,
+			);
+			name = qrencode;
 			sourceTree = "<group>";
 		};
 		A72BE2E80349A2BC4C3B907A /* Frameworks */ = {
@@ -245,6 +299,7 @@
 		E784A7461AE4C9E00052E9E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B9FE2581AE615FD008DCB1F /* qrencode */,
 				E784A7491AE4CA0D0052E9E3 /* views */,
 				E784A7481AE4C9FB0052E9E3 /* model */,
 				E784A7471AE4C9F20052E9E3 /* controllers */,
@@ -255,18 +310,18 @@
 		E784A7471AE4C9F20052E9E3 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B9FE2711AE61647008DCB1F /* QRCodeViewController.h */,
+				3B9FE2721AE61647008DCB1F /* QRCodeViewController.m */,
+				3B9FE2731AE61647008DCB1F /* QRCodeViewController.xib */,
 				E784A74A1AE4CA290052E9E3 /* HomeViewController.h */,
 				E784A74B1AE4CA290052E9E3 /* HomeViewController.m */,
-				E784A74C1AE4CA290052E9E3 /* HomeViewController.xib */,
+				3B9FE2761AE61695008DCB1F /* HomeViewController.xib */,
 				E784A74F1AE4CAC20052E9E3 /* RegisterViewController.h */,
 				E784A7501AE4CAC20052E9E3 /* RegisterViewController.m */,
 				E784A7511AE4CAC20052E9E3 /* RegisterViewController.xib */,
 				E784A7541AE4CAD10052E9E3 /* LoginViewController.h */,
 				E784A7551AE4CAD10052E9E3 /* LoginViewController.m */,
 				E784A7561AE4CAD10052E9E3 /* LoginViewController.xib */,
-				E784A7591AE4CB120052E9E3 /* ScanCodeViewController.h */,
-				E784A75A1AE4CB120052E9E3 /* ScanCodeViewController.m */,
-				E784A75B1AE4CB120052E9E3 /* ScanCodeViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -312,6 +367,7 @@
 		E7B70CD01AE4891500FF4B0B /* aiyide */ = {
 			isa = PBXGroup;
 			children = (
+				3B9FE2551AE61547008DCB1F /* Lib */,
 				E744DADB1AE5F2E600D6AAE9 /* webservice */,
 				E784A7461AE4C9E00052E9E3 /* Classes */,
 				E7B70CD51AE4891500FF4B0B /* AppDelegate.h */,
@@ -438,9 +494,9 @@
 				E784A7531AE4CAC20052E9E3 /* RegisterViewController.xib in Resources */,
 				E784A7581AE4CAD10052E9E3 /* LoginViewController.xib in Resources */,
 				E7B70CE21AE4891500FF4B0B /* LaunchScreen.xib in Resources */,
-				E784A75D1AE4CB120052E9E3 /* ScanCodeViewController.xib in Resources */,
 				E7B70CDF1AE4891500FF4B0B /* Images.xcassets in Resources */,
-				E784A74E1AE4CA290052E9E3 /* HomeViewController.xib in Resources */,
+				3B9FE2751AE61647008DCB1F /* QRCodeViewController.xib in Resources */,
+				3B9FE2771AE61695008DCB1F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,27 +547,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9FE26B1AE6160D008DCB1F /* QRCodeGenerator.m in Sources */,
 				E744DADF1AE5F34B00D6AAE9 /* SoapHelper.m in Sources */,
 				E744DB041AE5F43300D6AAE9 /* ASIDataDecompressor.m in Sources */,
 				3B74C1B51AE50F160097E0B4 /* AydRootButton.m in Sources */,
+				3B9FE26C1AE6160D008DCB1F /* qrencode.c in Sources */,
+				3B9FE26A1AE6160D008DCB1F /* mask.c in Sources */,
+				3B9FE26F1AE6160D008DCB1F /* rscode.c in Sources */,
 				E744DB031AE5F43300D6AAE9 /* ASIDataCompressor.m in Sources */,
 				E744DB071AE5F43300D6AAE9 /* ASINetworkQueue.m in Sources */,
 				E744DAEF1AE5F3F300D6AAE9 /* WebServices.m in Sources */,
 				E784A7521AE4CAC20052E9E3 /* RegisterViewController.m in Sources */,
 				E7B70CDA1AE4891500FF4B0B /* ViewController.m in Sources */,
+				3B9FE2741AE61647008DCB1F /* QRCodeViewController.m in Sources */,
+				3B9FE26E1AE6160D008DCB1F /* qrspec.c in Sources */,
 				E744DB061AE5F43300D6AAE9 /* ASIInputStream.m in Sources */,
 				E784A7571AE4CAD10052E9E3 /* LoginViewController.m in Sources */,
 				E744DB0B1AE5F46700D6AAE9 /* Reachability.m in Sources */,
+				3B9FE26D1AE6160D008DCB1F /* qrinput.c in Sources */,
 				E744DAE81AE5F3AB00D6AAE9 /* GDataXMLNode.m in Sources */,
+				3B9FE2701AE6160D008DCB1F /* split.c in Sources */,
 				E744DB021AE5F43300D6AAE9 /* ASIAuthenticationDialog.m in Sources */,
 				E7B70CD71AE4891500FF4B0B /* AppDelegate.m in Sources */,
 				E744DB051AE5F43300D6AAE9 /* ASIHTTPRequest.m in Sources */,
 				E7B70CD41AE4891500FF4B0B /* main.m in Sources */,
+				3B9FE2691AE6160D008DCB1F /* bitstream.c in Sources */,
 				E784A74D1AE4CA290052E9E3 /* HomeViewController.m in Sources */,
 				E744DB0E1AE5F47900D6AAE9 /* ServiceHelper.m in Sources */,
 				E744DAE31AE5F39E00D6AAE9 /* SoapXmlParseHelper.m in Sources */,
 				3B74C1B81AE53C180097E0B4 /* Tool.m in Sources */,
-				E784A75C1AE4CB120052E9E3 /* ScanCodeViewController.m in Sources */,
 				E744DAEB1AE5F3C200D6AAE9 /* AppHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

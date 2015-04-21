@@ -8,9 +8,13 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
-#import "ScanCodeViewController.h"
-
+#import "QRCodeViewController.h"
+#import "QRCodeGenerator.h"
 @interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *QRpicView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewH;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewW;
+@property (weak, nonatomic) IBOutlet UIView *QRBgView;
 
 @end
 
@@ -18,9 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self picViewWidth];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString       *QRString = [defaults valueForKey:@"15117956216"];
+    if (QRString) {
+        self.QRpicView.hidden= NO;
+        self.QRpicView.image = [QRCodeGenerator qrImageForString:QRString imageSize:self.picViewW.constant];
+    }else{
+        self.QRpicView.hidden= YES;
+    }
 }
+- (IBAction)changeClick:(id)sender {
 
+}
+- (void)picViewWidth{
+    CGFloat h = [UIScreen mainScreen].bounds.size.height;
+    if (h == 480) {
+        self.picViewH.constant = 175;
+        self.picViewW.constant = 175;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -31,12 +53,17 @@
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:loginViewController];
     nav.navigationBarHidden     = YES;
     [self presentViewController:nav animated:YES completion:nil];
-//    [self.navigationController pushViewController:loginViewController animated:YES];
-    
 }
 //到扫码页面
 - (IBAction)scanCodeAction:(id)sender {
-    ScanCodeViewController *scanCodeViewController  = [[ScanCodeViewController alloc]init];
+    QRCodeViewController *scanCodeViewController  = [[QRCodeViewController alloc]init];
+    scanCodeViewController.complete                 = ^(NSString *result){
+        self.QRpicView.hidden= NO;
+        self.QRpicView.image = [QRCodeGenerator qrImageForString:result imageSize:self.picViewW.constant];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:result forKey:@"15117956216"];
+        [defaults synchronize];
+    };
     [self.navigationController pushViewController:scanCodeViewController animated:YES];
 }
 
