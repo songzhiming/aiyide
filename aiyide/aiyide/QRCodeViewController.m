@@ -131,6 +131,9 @@
     }
     
 }
+- (IBAction)onclickBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma  mark 添加模糊效果
 -(void)configUI
 {

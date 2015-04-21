@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1408538B9030DA57CCBC77D8</key>
+		<key>08A202B02F08A6AB4AD94185</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E16480A698408957E302B9B</key>
+		<key>25F996B6B65FE92434A769FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B63515244FEE09436394EA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

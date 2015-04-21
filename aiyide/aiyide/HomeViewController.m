@@ -10,6 +10,13 @@
 #import "LoginViewController.h"
 #import "QRCodeViewController.h"
 #import "QRCodeGenerator.h"
+
+
+#import "SoapHelper.h"
+#import "ZXMultiFormatWriter.h"
+#import "ZXImage.h"
+
+
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *QRpicView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewH;
@@ -32,6 +39,8 @@
     }else{
         self.QRpicView.hidden= YES;
     }
+    
+    [self test];
 }
 - (IBAction)changeClick:(id)sender {
 
@@ -66,6 +75,32 @@
     };
     [self.navigationController pushViewController:scanCodeViewController animated:YES];
 }
+
+
+- (void)test{
+    NSError *error = nil;
+    ZXMultiFormatWriter *writer = [ZXMultiFormatWriter writer];
+    ZXBitMatrix* result = [writer encode:@"6922233623211"
+                                  format:kBarcodeFormatCode128
+                                   width:100
+                                  height:50
+                                   error:&error];
+    if (result) {
+        CGImageRef image = [[ZXImage imageWithMatrix:result] cgimage ];
+        NSLog(@"%@",image);
+        UIImage *imag=[UIImage imageWithCGImage:image];
+        self.QRpicView.image=imag;
+        
+        // This CGImageRef image can be placed in a UIImage, NSImage, or written to a file.
+    } else {
+        NSString *errorMessage = [error localizedDescription];
+        
+    }
+    
+}
+
+
+
 
 /*
 #pragma mark - Navigation

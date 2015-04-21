@@ -12,7 +12,7 @@
 #import "SoapHelper.h"
 #import "ASIHTTPRequest.h"
 #import "SoapXmlParseHelper.h"
-#import "SoapHelper.h"
+
 
 
 @interface AppDelegate ()
@@ -48,6 +48,7 @@
     NSLog(@"同步请求返回的xml:\n%@\n",xml);
     NSLog(@"=======同步请求结束======\n");
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeViewController">
@@ -46,7 +46,7 @@
                                 <action selector="clickInputButton:" destination="-1" eventType="touchUpInside" id="XNr-Cq-K4Z"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69T-KH-xn8">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69T-KH-xn8">
                             <rect key="frame" x="20" y="39" width="460" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -55,15 +55,67 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rn-fB-VRf">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="IXw-f1-wzB">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="24"/>
+                                </constraint>
+                                <constraint firstAttribute="width" constant="46" id="N0C-s8-lF2">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="24"/>
+                                </constraint>
+                            </constraints>
+                            <state key="normal" image="back">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="IXw-f1-wzB"/>
+                                    <exclude reference="N0C-s8-lF2"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="IXw-f1-wzB"/>
+                                    <include reference="N0C-s8-lF2"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="onclickBack:" destination="-1" eventType="touchUpInside" id="kNb-Sz-lvw"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="wTE-y3-VFL" firstAttribute="leading" secondItem="69T-KH-xn8" secondAttribute="trailing" constant="20" id="CiQ-mD-Zz9"/>
-                        <constraint firstItem="69T-KH-xn8" firstAttribute="leading" secondItem="R3r-Pz-20g" secondAttribute="leading" constant="20" id="EO4-hx-bA1"/>
+                        <constraint firstItem="69T-KH-xn8" firstAttribute="leading" secondItem="R3r-Pz-20g" secondAttribute="leading" constant="20" id="EO4-hx-bA1">
+                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                        </constraint>
                         <constraint firstItem="69T-KH-xn8" firstAttribute="centerY" secondItem="wTE-y3-VFL" secondAttribute="centerY" id="LKr-hb-u6G"/>
+                        <constraint firstItem="69T-KH-xn8" firstAttribute="leading" secondItem="5rn-fB-VRf" secondAttribute="trailing" constant="6" id="dnU-pm-FTU"/>
                         <constraint firstAttribute="trailing" secondItem="wTE-y3-VFL" secondAttribute="trailing" constant="20" id="kfI-OD-tsX"/>
                         <constraint firstItem="wTE-y3-VFL" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="top" constant="44" id="qFS-t9-7a5"/>
+                        <constraint firstItem="5rn-fB-VRf" firstAttribute="top" secondItem="R3r-Pz-20g" secondAttribute="top" constant="44" id="vZi-bv-HCM"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="5rn-fB-VRf"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="vZi-bv-HCM"/>
+                            <exclude reference="dnU-pm-FTU"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="5rn-fB-VRf"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="vZi-bv-HCM"/>
+                            <include reference="dnU-pm-FTU"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-sZ-ehT">
                     <rect key="frame" x="0.0" y="162" width="160" height="438"/>
@@ -127,6 +179,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back" width="24" height="24"/>
         <image name="扫描框.png" width="280" height="280"/>
         <image name="扫描网格.png" width="280" height="280"/>
     </resources>

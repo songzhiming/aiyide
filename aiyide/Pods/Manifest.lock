@@ -20,11 +20,16 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - ZXingObjC (3.1.0):
+    - ZXingObjC/All
+  - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - ZXingObjC (~> 3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
 COCOAPODS: 0.34.4
