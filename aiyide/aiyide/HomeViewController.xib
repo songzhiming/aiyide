@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="QRBgView" destination="hYW-j6-l23" id="U3U-sP-qFm"/>
                 <outlet property="QRpicView" destination="mp9-PZ-djK" id="EAX-W0-FMA"/>
+                <outlet property="phoneTextField" destination="KE6-Sa-qfH" id="nat-Lx-slY"/>
                 <outlet property="picViewH" destination="1Mr-jY-nM4" id="gqD-X5-RNv"/>
                 <outlet property="picViewW" destination="6u6-W4-p7a" id="Uqm-ct-bEv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

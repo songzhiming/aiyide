@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    helper = [[ServiceHelper alloc] initWithDelegate:self];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,12 +51,22 @@
                 [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.passwordTextField.text,@"Passwords", nil]];
                 NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"insertRegisterIos"];
                 //执行同步并取得结果
-                ServiceHelper *helper = [[ServiceHelper alloc] initWithDelegate:self];
+
                 [AppHelper showHUD:@"loading"];
                 [helper asynServiceMethod:@"insertRegisterIos" soapMessage:soapMsg];
+//                NSString *xml=[helper syncServiceMethod:@"insertRegisterIos" soapMessage:soapMsg];
+//                NSLog(@"xml====%@",xml);
                 //将xml使用SoapXmlParseHelper类转换成想要的结果
-       
-                
+//                [AppHelper removeHUD];//移除动画
+//                if([xml isEqualToString:@"1"]){//注册成功
+//                    [self showAlert:@"注册成功"];
+//                    [self.navigationController popViewControllerAnimated:YES];
+//                    
+//                }else if ([xml hasSuffix:@"已注册"]){
+//                    [self showMessage:@"该手机号码已注册"];
+//                }else{
+//                    [self showMessage:@"注册失败"];
+//                }
             }
         }
         
@@ -79,19 +90,22 @@
     
     NSLog(@"异步请求返回的xml:\n%@\n",xml);
     NSLog(@"=======异步请求结束======\n");
-    if([xml isEqualToString:@"1"]){//注册失败
-        [self showMessage:@"注册失败"];
+    if([xml isEqualToString:@"1"]){//注册成功
+        [[NSUserDefaults standardUserDefaults]setValue:self.phoneNoTextField.text forKey:@"phoneNo"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self showAlert:@"注册成功"];
+        [self.navigationController popViewControllerAnimated:YES];
     }else if ([xml hasSuffix:@"已注册"]){
         [self showMessage:@"该手机号码已注册"];
     }else{
-        [self showAlert:@"注册成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self showMessage:@"注册失败"];
     }
     
     [AppHelper removeHUD];//移除动画
 }
 -(void)finishFailRequest:(NSError*)error{
     NSLog(@"异步请发生失败:%@\n",[error description]);
+    [self showAlert:@"请求发生失败"];
     [AppHelper removeHUD];//移除动画
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

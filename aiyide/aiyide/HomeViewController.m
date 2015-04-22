@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewW;
 @property (weak, nonatomic) IBOutlet UIView *QRBgView;
+@property (weak, nonatomic) IBOutlet UILabel *phoneTextField;
 
 @end
 
@@ -41,6 +42,10 @@
     }
     
     [self test];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.phoneTextField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"];
 }
 - (IBAction)changeClick:(id)sender {
 
@@ -65,6 +70,9 @@
 }
 //到扫码页面
 - (IBAction)scanCodeAction:(id)sender {
+    if (self.phoneTextField.text.length == 0) {
+        [self showMessage:@"请先登录"];
+    }
     QRCodeViewController *scanCodeViewController  = [[QRCodeViewController alloc]init];
     scanCodeViewController.complete                 = ^(NSString *result){
         self.QRpicView.hidden= NO;
@@ -74,6 +82,13 @@
         [defaults synchronize];
     };
     [self.navigationController pushViewController:scanCodeViewController animated:YES];
+}
+
+
+- (void)showMessage:(NSString *)msg
+{
+    UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 

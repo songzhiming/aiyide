@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    helper = [[ServiceHelper alloc] initWithDelegate:self];
     // Do any additional setup after loading the view from its nib.
     // 设置uitextfield
     self.phoneField.leftView        = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 5, 0)];
@@ -34,6 +35,12 @@
     self.phoneField.delegate        = self;
     self.passwordField.delegate     = self;
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.phoneField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"];
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (self.phoneField == textField) {
@@ -52,9 +59,8 @@
         [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.passwordField.text,@"Passwords", nil]];
         NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SelectLoginIos"];
         //执行同步并取得结果
-        ServiceHelper *helper = [[ServiceHelper alloc] initWithDelegate:self];
         [AppHelper showHUD:@"loading"];
-        [helper asynServiceMethod:@"SelectLoginIos" soapMessage:soapMsg];
+        [helper asynServiceMethod:@"insertRegisterIos" soapMessage:soapMsg];
         //将xml使用SoapXmlParseHelper类转换成想要的结果
         
         
@@ -78,7 +84,10 @@
         [self showMessage:@"登陆成功"];
          [self dismissViewControllerAnimated:YES completion:nil];
     }else{
-        [self showMessage:@"注册成功"];
+        [self showAlert:@"登陆成功"];
+        [[NSUserDefaults standardUserDefaults]setValue:self.phoneField.text forKey:@"phoneNo"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }
@@ -91,6 +100,7 @@
 
 -(void)finishFailRequest:(NSError*)error{
     NSLog(@"异步请发生失败:%@\n",[error description]);
+    [self showAlert:@"请求发生失败"];
     [AppHelper removeHUD];//移除动画
 }
 
@@ -115,6 +125,23 @@
     [self.view endEditing:YES];
 }
 
+- (void)timerFireMethod:(NSTimer*)theTimer//弹出框
+{
+    UIAlertView *promptAlert = (UIAlertView*)[theTimer userInfo];
+    [promptAlert dismissWithClickedButtonIndex:0 animated:NO];
+    promptAlert =NULL;
+}
 
+
+- (void)showAlert:(NSString *) _message{//时间
+    UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:_message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.0f
+                                     target:self
+                                   selector:@selector(timerFireMethod:)
+                                   userInfo:promptAlert
+                                    repeats:YES];
+    [promptAlert show];
+}
 
 @end

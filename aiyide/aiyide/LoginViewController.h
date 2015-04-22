@@ -10,5 +10,8 @@
 #import "ServiceHelper.h"
 
 @interface LoginViewController : UIViewController<ServiceHelperDelegate>
+{
+    ServiceHelper *helper ;
+}
 
 @end
