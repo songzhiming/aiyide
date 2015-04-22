@@ -31,11 +31,16 @@
     [super viewDidAppear:animated];
     
 }
+
+//点击手动输入按钮
 - (IBAction)clickInputButton:(UIButton *)sender {
     if (_resultTextField.text.length > 0) {
         if (self.complete) {
+
             self.complete(_resultTextField.text);
         }
+        [[NSUserDefaults standardUserDefaults]setValue:_resultTextField.text forKey:@"scanCodeString"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -125,6 +130,10 @@
         [_timer invalidate];
         if (self.complete) {
             self.complete(stringvalue);
+            
+            [[NSUserDefaults standardUserDefaults]setValue:stringvalue forKey:@"scanCodeString"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
             self.complete = nil;
             [self.navigationController popViewControllerAnimated:YES];
         }

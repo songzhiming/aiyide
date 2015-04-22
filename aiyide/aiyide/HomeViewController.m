@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picViewW;
 @property (weak, nonatomic) IBOutlet UIView *QRBgView;
 @property (weak, nonatomic) IBOutlet UILabel *phoneTextField;
+@property (weak, nonatomic) IBOutlet UILabel *barCodeLabel;
 
 @end
 
@@ -33,15 +34,15 @@
     [self picViewWidth];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString       *QRString = [defaults valueForKey:@"15117956216"];
+    NSString       *QRString = [defaults objectForKey:@"scanCodeString"];
     if (QRString) {
         self.QRpicView.hidden= NO;
         self.QRpicView.image = [QRCodeGenerator qrImageForString:QRString imageSize:self.picViewW.constant];
+         self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
     }else{
         self.QRpicView.hidden= YES;
     }
     
-    [self test];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -115,6 +116,73 @@
     
 }
 
+
+//点击手机条形码
+- (IBAction)onclickBarCode:(id)sender {
+    if (self.phoneTextField.text.length == 0) {
+        [self showMessage:@"请先登录"];
+        return;
+    }
+    self.barCodeLabel.text = @"条码:";
+    UIButton *btn = (UIButton *)sender;
+    btn.selected = !btn.selected;
+    UIButton *btn1 = (UIButton *)[self.view viewWithTag:101];
+    btn1.selected = btn.selected;
+    NSError *error = nil;
+    ZXMultiFormatWriter *writer = [ZXMultiFormatWriter writer];
+    ZXBitMatrix* result = [writer encode:self.phoneTextField.text
+                                  format:kBarcodeFormatCode128
+                                   width:100
+                                  height:50
+                                   error:&error];
+    if (result) {
+        CGImageRef image = [[ZXImage imageWithMatrix:result] cgimage ];
+        NSLog(@"%@",image);
+        UIImage *imag=[UIImage imageWithCGImage:image];
+        self.QRpicView.image=imag;
+        
+        // This CGImageRef image can be placed in a UIImage, NSImage, or written to a file.
+    } else {
+        NSString *errorMessage = [error localizedDescription];
+        
+    }
+    
+}
+//点击扫码条码
+- (IBAction)onclickScanCode:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString       *QRString = [defaults objectForKey:@"scanCodeString"];
+    UIButton *btn = (UIButton *)sender;
+    btn.selected = !btn.selected;
+    UIButton *btn1 = (UIButton *)[self.view viewWithTag:100];
+    btn1.selected = btn.selected;
+    if (QRString) {
+        self.QRpicView.hidden= NO;
+    
+        NSDate *now = [NSDate date];
+        NSLog(@"now date is: %@", now);
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+        NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+        
+        int year = [dateComponent year];
+        int month = [dateComponent month];
+        int day = [dateComponent day];
+        int hour = [dateComponent hour];
+        int minute = [dateComponent minute];
+        int second = [dateComponent second];
+    
+        NSLog(@"year=%dmonth=%dday=%dhour=%dminute=%dsecond=%d",year,month,day,hour,minute,second);
+        //扫描QR码数据+“@”+日小时分钟+手机号后10位。
+        NSString *replaceString = [NSString stringWithFormat:@"%@%@%d%d%d%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(10, 1)]];
+        NSLog(@"====%@",replaceString);
+        
+        self.QRpicView.image = [QRCodeGenerator qrImageForString:replaceString imageSize:self.picViewW.constant];
+        self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
+    }else{
+        self.QRpicView.hidden= YES;
+    }
+}
 
 
 

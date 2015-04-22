@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="QRBgView" destination="hYW-j6-l23" id="U3U-sP-qFm"/>
                 <outlet property="QRpicView" destination="mp9-PZ-djK" id="EAX-W0-FMA"/>
+                <outlet property="barCodeLabel" destination="3U6-q4-GiQ" id="VBS-k3-Mv1"/>
                 <outlet property="phoneTextField" destination="KE6-Sa-qfH" id="nat-Lx-slY"/>
                 <outlet property="picViewH" destination="1Mr-jY-nM4" id="gqD-X5-RNv"/>
                 <outlet property="picViewW" destination="6u6-W4-p7a" id="Uqm-ct-bEv"/>
@@ -74,7 +75,7 @@
                         <action selector="scanCodeAction:" destination="-1" eventType="touchUpInside" id="JpP-3h-BsB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-vf-7jd">
+                <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-vf-7jd">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="46" id="DBt-Md-TEy">
@@ -100,6 +101,7 @@
                     </variation>
                     <connections>
                         <action selector="changeClick:" destination="-1" eventType="touchUpInside" id="MLz-Kc-pzZ"/>
+                        <action selector="onclickBarCode:" destination="-1" eventType="touchUpInside" id="0kr-iQ-nRV"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号条码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S5-sL-rhf">
@@ -126,7 +128,7 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m4-xi-mVk">
+                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m4-xi-mVk">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Yza-Ro-a8o">
@@ -152,6 +154,9 @@
                             <include reference="qyp-ZO-22U"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="onclickScanCode:" destination="-1" eventType="touchUpInside" id="ORb-R4-Tlp"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫码条码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTl-3s-g8S">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -177,13 +182,15 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="条码:008" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-q4-GiQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="条码:008" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-q4-GiQ">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="0Li-sp-HC1">
-                            <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="300"/>
                         </constraint>
-                        <constraint firstAttribute="height" constant="21" id="ha9-0R-mGT"/>
+                        <constraint firstAttribute="height" constant="21" id="ha9-0R-mGT">
+                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
