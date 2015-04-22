@@ -75,7 +75,7 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y5-4v-z0U">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="me6-6h-OJm"/>
                                 <constraint firstAttribute="width" constant="24" id="u31-ec-PCh"/>
@@ -290,6 +290,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="24" height="24"/>
+        <image name="back" width="12" height="23"/>
     </resources>
 </document>

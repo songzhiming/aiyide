@@ -72,6 +72,7 @@
 - (IBAction)scanCodeAction:(id)sender {
     if (self.phoneTextField.text.length == 0) {
         [self showMessage:@"请先登录"];
+        return;
     }
     QRCodeViewController *scanCodeViewController  = [[QRCodeViewController alloc]init];
     scanCodeViewController.complete                 = ^(NSString *result){

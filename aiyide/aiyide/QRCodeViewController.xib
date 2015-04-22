@@ -57,7 +57,7 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rn-fB-VRf">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="IXw-f1-wzB">
                                     <variation key="heightClass=regular-widthClass=compact" constant="24"/>
@@ -179,8 +179,8 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="24" height="24"/>
+        <image name="back" width="12" height="23"/>
         <image name="扫描框.png" width="280" height="280"/>
-        <image name="扫描网格.png" width="280" height="280"/>
+        <image name="扫描网格.png" width="24" height="24"/>
     </resources>
 </document>
