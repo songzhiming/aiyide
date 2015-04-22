@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,7 +22,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>08A202B02F08A6AB4AD94185</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1408538B9030DA57CCBC77D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>25F996B6B65FE92434A769FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B63515244FEE09436394EA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

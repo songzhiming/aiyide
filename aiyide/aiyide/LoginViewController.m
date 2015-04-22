@@ -18,6 +18,7 @@
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *space;
 
 @end
 
@@ -34,6 +35,11 @@
     self.passwordField.leftViewMode = UITextFieldViewModeAlways;
     self.phoneField.delegate        = self;
     self.passwordField.delegate     = self;
+    
+    CGFloat h = [UIScreen mainScreen].bounds.size.height;
+    if (h == 480) {
+        self.space.constant = 0;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{

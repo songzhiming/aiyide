@@ -2,7 +2,7 @@
 //  QRCodeViewController.m
 //  yjtos
 //
-//  Created by yuanph on 15-1-29.
+//  Created by WangZHW on 15-1-29.
 //  Copyright (c) 2015年 RobuSoft. All rights reserved.
 //
 
@@ -36,11 +36,8 @@
 - (IBAction)clickInputButton:(UIButton *)sender {
     if (_resultTextField.text.length > 0) {
         if (self.complete) {
-
             self.complete(_resultTextField.text);
         }
-        [[NSUserDefaults standardUserDefaults]setValue:_resultTextField.text forKey:@"scanCodeString"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

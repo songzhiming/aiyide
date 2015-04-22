@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -10,6 +10,7 @@
                 <outlet property="QRBgView" destination="hYW-j6-l23" id="U3U-sP-qFm"/>
                 <outlet property="QRpicView" destination="mp9-PZ-djK" id="EAX-W0-FMA"/>
                 <outlet property="barCodeLabel" destination="3U6-q4-GiQ" id="VBS-k3-Mv1"/>
+                <outlet property="bottomSpace" destination="McW-aj-l7r" id="DnM-rN-j7B"/>
                 <outlet property="phoneTextField" destination="KE6-Sa-qfH" id="nat-Lx-slY"/>
                 <outlet property="picViewH" destination="1Mr-jY-nM4" id="gqD-X5-RNv"/>
                 <outlet property="picViewW" destination="6u6-W4-p7a" id="Uqm-ct-bEv"/>
@@ -138,10 +139,10 @@
                             <variation key="heightClass=regular-widthClass=compact" constant="35"/>
                         </constraint>
                     </constraints>
-                    <state key="normal" image="code_Selected">
+                    <state key="normal" image="code_Normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" image="code_Normal"/>
+                    <state key="selected" image="code_Selected"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="Yza-Ro-a8o"/>
@@ -182,7 +183,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="条码:008" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-q4-GiQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="条码:" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-q4-GiQ">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="0Li-sp-HC1">
@@ -288,7 +289,7 @@
                 <constraint firstItem="3U6-q4-GiQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="CjP-6N-vbl"/>
                 <constraint firstAttribute="centerX" secondItem="SWI-u0-580" secondAttribute="centerX" constant="8" id="FtB-1N-2iX"/>
                 <constraint firstAttribute="bottom" secondItem="3U6-q4-GiQ" secondAttribute="bottom" constant="157" id="McW-aj-l7r">
-                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                 </constraint>
                 <constraint firstItem="KE6-Sa-qfH" firstAttribute="centerY" secondItem="kOz-GB-iyO" secondAttribute="centerY" constant="17" id="MmJ-fK-ARq">
                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>

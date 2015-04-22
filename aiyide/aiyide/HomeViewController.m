@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *QRBgView;
 @property (weak, nonatomic) IBOutlet UILabel *phoneTextField;
 @property (weak, nonatomic) IBOutlet UILabel *barCodeLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
 
 @end
 
@@ -32,21 +33,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self picViewWidth];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString       *QRString = [defaults objectForKey:@"scanCodeString"];
-    if (QRString) {
-        self.QRpicView.hidden= NO;
-        self.QRpicView.image = [QRCodeGenerator qrImageForString:QRString imageSize:self.picViewW.constant];
-         self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
-    }else{
-        self.QRpicView.hidden= YES;
-    }
-    
+    [self showQR];
 }
+
+
+// 显示二维码
+- (void)showQR{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString       *phone    = [defaults valueForKey:@"phoneNo"];
+    if (phone) {
+        NSString       *QRString = [defaults valueForKey:phone];
+        if (QRString) {
+            self.QRBgView.hidden= NO;
+            
+            NSDate *now = [NSDate date];
+            NSLog(@"now date is: %@", now);
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+            NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+            NSInteger year = [dateComponent year];
+            NSInteger month = [dateComponent month];
+            NSInteger day = [dateComponent day];
+            NSInteger hour = [dateComponent hour];
+            NSInteger minute = [dateComponent minute];
+            NSInteger second = [dateComponent second];
+            NSLog(@"year=%ldmonth=%ldday=%ldhour=%ldminute=%ldsecond=%ld",year,month,day,hour,minute,second);
+            //扫描QR码数据+“@”+日小时分钟+手机号后10位。
+            NSString *replaceString = [NSString stringWithFormat:@"%@%@%ld%ld%ld%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            
+            self.QRpicView.image = [QRCodeGenerator qrImageForString:replaceString imageSize:self.picViewW.constant];
+            self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
+        }else{
+            self.QRBgView.hidden= YES;
+        }
+    }else{
+        self.QRBgView.hidden= YES;
+    }
+}
+
+
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.phoneTextField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"];
+    UIButton *button = (UIButton *)[self.view viewWithTag:101];
+    button.selected  = YES;
 }
 - (IBAction)changeClick:(id)sender {
 
@@ -77,11 +108,10 @@
     }
     QRCodeViewController *scanCodeViewController  = [[QRCodeViewController alloc]init];
     scanCodeViewController.complete                 = ^(NSString *result){
-        self.QRpicView.hidden= NO;
-        self.QRpicView.image = [QRCodeGenerator qrImageForString:result imageSize:self.picViewW.constant];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setValue:result forKey:@"15117956216"];
+        [defaults setObject:result forKey:[defaults valueForKey:@"phoneNo"]];
         [defaults synchronize];
+        [self showQR];
     };
     [self.navigationController pushViewController:scanCodeViewController animated:YES];
 }
@@ -118,11 +148,12 @@
 
 
 //点击手机条形码
-- (IBAction)onclickBarCode:(id)sender {
+- (IBAction)onclickBarCode:(UIButton *)sender {
     if (self.phoneTextField.text.length == 0) {
         [self showMessage:@"请先登录"];
         return;
     }
+    self.QRBgView.hidden = NO;
     self.barCodeLabel.text = @"条码:";
     UIButton *btn = (UIButton *)sender;
     btn.selected = !btn.selected;
@@ -146,42 +177,17 @@
         NSString *errorMessage = [error localizedDescription];
         
     }
+    sender.selected = YES;
+    sender = (UIButton *)[self.view viewWithTag:101];
+    sender.selected = NO;
     
 }
 //点击扫码条码
-- (IBAction)onclickScanCode:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString       *QRString = [defaults objectForKey:@"scanCodeString"];
-    UIButton *btn = (UIButton *)sender;
-    btn.selected = !btn.selected;
-    UIButton *btn1 = (UIButton *)[self.view viewWithTag:100];
-    btn1.selected = btn.selected;
-    if (QRString) {
-        self.QRpicView.hidden= NO;
-    
-        NSDate *now = [NSDate date];
-        NSLog(@"now date is: %@", now);
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-        NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
-        
-        int year = [dateComponent year];
-        int month = [dateComponent month];
-        int day = [dateComponent day];
-        int hour = [dateComponent hour];
-        int minute = [dateComponent minute];
-        int second = [dateComponent second];
-    
-        NSLog(@"year=%dmonth=%dday=%dhour=%dminute=%dsecond=%d",year,month,day,hour,minute,second);
-        //扫描QR码数据+“@”+日小时分钟+手机号后10位。
-        NSString *replaceString = [NSString stringWithFormat:@"%@%@%d%d%d%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(10, 1)]];
-        NSLog(@"====%@",replaceString);
-        
-        self.QRpicView.image = [QRCodeGenerator qrImageForString:replaceString imageSize:self.picViewW.constant];
-        self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
-    }else{
-        self.QRpicView.hidden= YES;
-    }
+- (IBAction)onclickScanCode:(UIButton *)sender {
+    [self showQR];
+    sender.selected = YES;
+    UIButton *disButton = (UIButton *)[self.view viewWithTag:100];
+    disButton.selected = NO;
 }
 
 
