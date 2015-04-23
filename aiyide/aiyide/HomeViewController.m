@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneTextField;
 @property (weak, nonatomic) IBOutlet UILabel *barCodeLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
+@property (assign,nonatomic)BOOL isFirst;
 
 @end
 
@@ -59,7 +60,13 @@
             NSInteger second = [dateComponent second];
             NSLog(@"year=%ldmonth=%ldday=%ldhour=%ldminute=%ldsecond=%ld",year,month,day,hour,minute,second);
             //扫描QR码数据+“@”+日小时分钟+手机号后10位。
-            NSString *replaceString = [NSString stringWithFormat:@"%@%@%ld%ld%ld%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            NSString *replaceString;
+            if (0<hour<10) {
+                replaceString = [NSString stringWithFormat:@"%@%@%ld%@%ld%ld%@",QRString,@"@",day,@"0",hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            }else{
+                replaceString = [NSString stringWithFormat:@"%@%@%ld%ld%ld%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            }
+
             
             self.QRpicView.image = [QRCodeGenerator qrImageForString:replaceString imageSize:self.picViewW.constant];
             self.barCodeLabel.text = [NSString stringWithFormat:@"%@%@",@"条码:",QRString];
@@ -76,8 +83,11 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.phoneTextField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"];
-    UIButton *button = (UIButton *)[self.view viewWithTag:101];
-    button.selected  = YES;
+    if (_isFirst == NO) {
+        UIButton *button = (UIButton *)[self.view viewWithTag:101];
+        button.selected  = YES;
+        _isFirst = YES;
+    }
 }
 - (IBAction)changeClick:(id)sender {
 
@@ -86,7 +96,7 @@
     CGFloat h = [UIScreen mainScreen].bounds.size.height;
     if (h == 480) {
         self.picViewH.constant = 175;
-        self.picViewW.constant = 175;
+//        self.picViewW.constant = 175;
     }
 }
 - (void)didReceiveMemoryWarning {
@@ -154,7 +164,7 @@
         return;
     }
     self.QRBgView.hidden = NO;
-    self.barCodeLabel.text = @"条码:";
+//    self.barCodeLabel.text = @"条码:";
     UIButton *btn = (UIButton *)sender;
     btn.selected = !btn.selected;
     UIButton *btn1 = (UIButton *)[self.view viewWithTag:101];

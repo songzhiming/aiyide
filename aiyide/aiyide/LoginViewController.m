@@ -38,7 +38,7 @@
     
     CGFloat h = [UIScreen mainScreen].bounds.size.height;
     if (h == 480) {
-        self.space.constant = 0;
+        self.space.constant = -10;
     }
 }
 
@@ -60,14 +60,19 @@
 - (IBAction)ClickLoginButton:(UIButton *)sender {
     [self.view endEditing:YES];
     if (self.phoneField.text.length > 0 && self.passwordField.text.length > 0) {
-        NSMutableArray *arr=[NSMutableArray array];
-        [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.phoneField.text,@"PhoneNo", nil]];
-        [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.passwordField.text,@"Passwords", nil]];
-        NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SelectLoginIos"];
-        //执行同步并取得结果
-        [AppHelper showHUD:@"loading"];
-        [helper asynServiceMethod:@"insertRegisterIos" soapMessage:soapMsg];
-        //将xml使用SoapXmlParseHelper类转换成想要的结果
+        if ([self.phoneField.text hasPrefix:@"1"] && self.phoneField.text.length == 11) {
+            NSMutableArray *arr=[NSMutableArray array];
+            [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.phoneField.text,@"PhoneNo", nil]];
+            [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.passwordField.text,@"Passwords", nil]];
+            NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SelectLoginIos"];
+            //执行同步并取得结果
+            [AppHelper showHUD:@"loading"];
+            [helper asynServiceMethod:@"SelectLoginIos" soapMessage:soapMsg];
+            //将xml使用SoapXmlParseHelper类转换成想要的结果
+        }else{
+            [self showMessage:@"请输入正确的手机号码"];
+        }
+
         
         
         
@@ -86,9 +91,8 @@
     NSLog(@"异步请求返回的xml:\n%@\n",xml);
     [AppHelper removeHUD];//移除动画
     NSLog(@"=======异步请求结束======\n");
-    if([xml isEqualToString:@"-1"]){//登陆成功
-        [self showMessage:@"登陆成功"];
-         [self dismissViewControllerAnimated:YES completion:nil];
+    if([xml isEqualToString:@"-1"]){//登陆失败
+        [self showMessage:@"登陆失败"];
     }else{
         [self showAlert:@"登陆成功"];
         [[NSUserDefaults standardUserDefaults]setValue:self.phoneField.text forKey:@"phoneNo"];

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
@@ -30,9 +30,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztQ-oh-ztv">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="85" id="Rxj-Dd-pQy"/>
+                                <constraint firstAttribute="width" constant="85" id="Rxj-Dd-pQy">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                                </constraint>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
@@ -48,13 +50,13 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-8W-WBw">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认密码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teD-zT-ulj">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -132,7 +134,9 @@
                         <constraint firstItem="FtA-U1-0J9" firstAttribute="trailing" secondItem="jBt-Pk-km4" secondAttribute="trailing" id="jiC-n1-x4V"/>
                         <constraint firstAttribute="height" constant="300" id="kfu-2m-F8w"/>
                         <constraint firstItem="1Y5-4v-z0U" firstAttribute="top" secondItem="ysx-ef-CXs" secondAttribute="top" constant="46" id="nOO-3p-mlU"/>
-                        <constraint firstItem="ztQ-oh-ztv" firstAttribute="leading" secondItem="ysx-ef-CXs" secondAttribute="leading" constant="42" id="sJ9-jz-Gjj"/>
+                        <constraint firstItem="ztQ-oh-ztv" firstAttribute="leading" secondItem="ysx-ef-CXs" secondAttribute="leading" constant="42" id="sJ9-jz-Gjj">
+                            <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                        </constraint>
                         <constraint firstItem="FtA-U1-0J9" firstAttribute="trailing" secondItem="3h2-kT-8px" secondAttribute="trailing" id="uuL-jS-xf7"/>
                         <constraint firstItem="FtA-U1-0J9" firstAttribute="centerY" secondItem="sHP-8W-WBw" secondAttribute="centerY" constant="-4.5" id="wom-gn-NWi">
                             <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -240,7 +244,7 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7jI-Ru-Ix5" firstAttribute="top" secondItem="ysx-ef-CXs" secondAttribute="bottom" constant="54" id="3ae-lu-cQv">
-                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                 </constraint>
                 <constraint firstAttribute="bottom" secondItem="OeP-8J-5fs" secondAttribute="bottom" constant="50" id="7gd-Yy-tw2">
                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>

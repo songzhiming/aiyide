@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -66,16 +66,6 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-u0-580" customClass="AydRootButton">
-                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" title="扫码">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="scanCodeAction:" destination="-1" eventType="touchUpInside" id="JpP-3h-BsB"/>
-                    </connections>
-                </button>
                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-vf-7jd">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
@@ -240,14 +230,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYW-j6-l23">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-PZ-djK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-PZ-djK">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="1Mr-jY-nM4"/>
-                        <constraint firstAttribute="width" constant="250" id="6u6-W4-p7a"/>
+                        <constraint firstAttribute="width" constant="250" id="6u6-W4-p7a">
+                            <variation key="heightClass=regular-widthClass=compact" constant="288"/>
+                        </constraint>
                         <constraint firstItem="mp9-PZ-djK" firstAttribute="leading" secondItem="hYW-j6-l23" secondAttribute="leading" id="DgI-4S-Uoa"/>
                         <constraint firstItem="mp9-PZ-djK" firstAttribute="top" secondItem="hYW-j6-l23" secondAttribute="top" id="GPk-dm-Qyb"/>
                         <constraint firstAttribute="trailing" secondItem="mp9-PZ-djK" secondAttribute="trailing" id="hWL-so-Ujw"/>
@@ -280,6 +272,16 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-u0-580" customClass="AydRootButton">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="扫码">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="scanCodeAction:" destination="-1" eventType="touchUpInside" id="JpP-3h-BsB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -324,7 +326,6 @@
                 <mask key="subviews">
                     <exclude reference="kOz-GB-iyO"/>
                     <exclude reference="KE6-Sa-qfH"/>
-                    <exclude reference="SWI-u0-580"/>
                     <exclude reference="Sci-vf-7jd"/>
                     <exclude reference="0S5-sL-rhf"/>
                     <exclude reference="5m4-xi-mVk"/>
@@ -332,6 +333,7 @@
                     <exclude reference="3U6-q4-GiQ"/>
                     <exclude reference="wcx-Oy-7NP"/>
                     <exclude reference="hYW-j6-l23"/>
+                    <exclude reference="SWI-u0-580"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="dTn-PD-4XO"/>
@@ -362,7 +364,6 @@
                 <mask key="subviews">
                     <include reference="kOz-GB-iyO"/>
                     <include reference="KE6-Sa-qfH"/>
-                    <include reference="SWI-u0-580"/>
                     <include reference="Sci-vf-7jd"/>
                     <include reference="0S5-sL-rhf"/>
                     <include reference="5m4-xi-mVk"/>
@@ -370,6 +371,7 @@
                     <include reference="3U6-q4-GiQ"/>
                     <include reference="wcx-Oy-7NP"/>
                     <include reference="hYW-j6-l23"/>
+                    <include reference="SWI-u0-580"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="dTn-PD-4XO"/>
