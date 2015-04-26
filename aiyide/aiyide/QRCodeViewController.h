@@ -10,6 +10,7 @@
 
 typedef void(^complete) (NSString *result);
 
+
 @interface QRCodeViewController : UIViewController
 /**回调black*/
 @property (copy , nonatomic) complete complete;

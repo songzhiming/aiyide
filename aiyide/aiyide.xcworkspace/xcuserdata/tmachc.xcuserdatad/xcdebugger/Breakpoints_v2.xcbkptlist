@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "aiyide/LoginViewController.m"
-            timestampString = "451410969.869008"
+            filePath = "aiyide/HomeViewController.m"
+            timestampString = "451579239.399533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-showMessage:"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-showQR"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "aiyide/HomeViewController.m"
-            timestampString = "451444787.74951"
+            filePath = "aiyide/QRCodeViewController.m"
+            timestampString = "451717584.728195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-showQR"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-getScanCrop:readerViewBounds:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

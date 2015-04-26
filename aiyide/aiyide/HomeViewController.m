@@ -61,11 +61,36 @@
             NSLog(@"year=%ldmonth=%ldday=%ldhour=%ldminute=%ldsecond=%ld",year,month,day,hour,minute,second);
             //扫描QR码数据+“@”+日小时分钟+手机号后10位。
             NSString *replaceString;
-            if (0<hour<10) {
-                replaceString = [NSString stringWithFormat:@"%@%@%ld%@%ld%ld%@",QRString,@"@",day,@"0",hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            NSString *newDay;
+            NSString *newHour;
+            NSString *newMinute;
+            if (day - 10 < 0) {
+                newDay = [NSString stringWithFormat:@"%@%ld",@"0",(long)day];
             }else{
-                replaceString = [NSString stringWithFormat:@"%@%@%ld%ld%ld%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+                newDay = [NSString stringWithFormat:@"%ld",(long)day];
             }
+            if (hour - 10 < 0) {
+                newHour = [NSString stringWithFormat:@"%@%ld",@"0",(long)hour];
+            }else{
+                newHour = [NSString stringWithFormat:@"%ld",(long)hour];
+            }
+            if (minute - 10 < 0) {
+                newMinute = [NSString stringWithFormat:@"%@%ld",@"0",(long)minute];
+            }else{
+                newMinute = [NSString stringWithFormat:@"%ld",(long)minute];
+            }
+            
+            
+            replaceString = [NSString stringWithFormat:@"%@%@%@%@%@%@",QRString,@"@",newDay,newHour,newMinute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+            
+//            if (hour - 10 < 0) {
+//                NSLog(@"111");
+//                replaceString = [NSString stringWithFormat:@"%@%@%ld%@%ld%ld%@",QRString,@"@",day,@"0",hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+//            }else{
+//                NSLog(@"222");
+//                replaceString = [NSString stringWithFormat:@"%@%@%ld%ld%ld%@",QRString,@"@",day,hour,minute,[[[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"] substringWithRange:NSMakeRange(1, 10)]];
+//            }
+
 
             
             self.QRpicView.image = [QRCodeGenerator qrImageForString:replaceString imageSize:self.picViewW.constant];
@@ -83,11 +108,13 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.phoneTextField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"phoneNo"];
-    if (_isFirst == NO) {
+//    if (_isFirst == NO) {
         UIButton *button = (UIButton *)[self.view viewWithTag:101];
         button.selected  = YES;
-        _isFirst = YES;
-    }
+    UIButton *button1 = (UIButton *)[self.view viewWithTag:100];
+    button1.selected  = NO;
+//        _isFirst = YES;
+//    }
 }
 - (IBAction)changeClick:(id)sender {
 
